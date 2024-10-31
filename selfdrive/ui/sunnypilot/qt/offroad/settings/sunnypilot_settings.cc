@@ -74,7 +74,7 @@ SunnypilotPanel::SunnypilotPanel(QWidget *parent) : QFrame(parent) {
       QString("%1<br>"
               "<h4>%2</h4><br>"
               "<h4>%3</h4><br>")
-      .arg(tr("Change the ACC +/- buttons behavior with cruise speed change in sunnypilot."))
+      .arg(tr("Change the ACC +/- buttons behavior with cruise speed change in Gambitdriver."))
       .arg(tr("Disabled (Stock): Short=1, Long = 5 (imperial) / 10 (metric)"))
       .arg(tr("Enabled: Short = 5 (imperial) / 10 (metric), Long=1")),
       "../assets/offroad/icon_blank.png",
@@ -94,7 +94,7 @@ SunnypilotPanel::SunnypilotPanel(QWidget *parent) : QFrame(parent) {
     {
       "EnforceTorqueLateral",
       tr("Enforce Torque Lateral Control"),
-      tr("Enable this to enforce sunnypilot to steer with Torque lateral control."),
+      tr("Enable this to enforce Gambitdriver to steer with Torque lateral control."),
       "../assets/offroad/icon_blank.png",
     },
     {
@@ -125,7 +125,7 @@ SunnypilotPanel::SunnypilotPanel(QWidget *parent) : QFrame(parent) {
     {
       "QuietDrive",
       tr("Quiet Drive 🤫"),
-      tr("sunnypilot will display alerts but only play the most important warning sounds. This feature can be toggled while the car is on."),
+      tr("Gambitdriver will display alerts but only play the most important warning sounds. This feature can be toggled while the car is on."),
       "../assets/offroad/icon_blank.png",
     },
     {

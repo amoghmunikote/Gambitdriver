@@ -134,7 +134,7 @@ SPVehiclesTogglesPanel::SPVehiclesTogglesPanel(VehiclePanel *parent) : ListWidge
   stockLongToyota = new ParamControlSP(
     "StockLongToyota",
     tr("Enable Stock Toyota Longitudinal Control"),
-    tr("sunnypilot will <b>not</b> take over control of gas and brakes. Stock Toyota longitudinal control will be used."),
+    tr("Gambitdriver will <b>not</b> take over control of gas and brakes. Stock Toyota longitudinal control will be used."),
     "../assets/offroad/icon_blank.png");
   stockLongToyota->setConfirmation(true, false);
   addItem(stockLongToyota);
@@ -169,7 +169,7 @@ SPVehiclesTogglesPanel::SPVehiclesTogglesPanel(VehiclePanel *parent) : ListWidge
   auto toyotaSngHack = new ParamControlSP(
     "ToyotaSnG",
     tr("Enable Toyota Stop and Go Hack"),
-    tr("sunnypilot will allow some Toyota/Lexus cars to auto resume during stop and go traffic. This feature is only applicable to certain models. Use at your own risk."),
+    tr("Gambitdriver will allow some Toyota/Lexus cars to auto resume during stop and go traffic. This feature is only applicable to certain models. Use at your own risk."),
     "../assets/offroad/icon_blank.png");
   toyotaSngHack->setConfirmation(true, false);
   addItem(toyotaSngHack);
@@ -177,7 +177,7 @@ SPVehiclesTogglesPanel::SPVehiclesTogglesPanel(VehiclePanel *parent) : ListWidge
   auto toyotaAutoLock = new ParamControlSP(
     "ToyotaAutoLock",
     tr("Enable Toyota Door Auto Locking"),
-    tr("sunnypilot will attempt to lock the doors when drive above 10 km/h (6.2 mph).\nReboot Required."),
+    tr("Gambitdriver will attempt to lock the doors when drive above 10 km/h (6.2 mph).\nReboot Required."),
     "../assets/offroad/icon_blank.png");
   toyotaAutoLock->setConfirmation(true, false);
   addItem(toyotaAutoLock);
@@ -185,7 +185,7 @@ SPVehiclesTogglesPanel::SPVehiclesTogglesPanel(VehiclePanel *parent) : ListWidge
   auto toyotaAutoUnlock = new ParamControlSP(
     "ToyotaAutoUnlockByShifter",
     tr("Enable Toyota Door Auto Unlocking"),
-    tr("sunnypilot will attempt to unlock the doors when shift to gear P.\nReboot Required."),
+    tr("Gambitdriver will attempt to unlock the doors when shift to gear P.\nReboot Required."),
     "../assets/offroad/icon_blank.png");
   toyotaAutoUnlock->setConfirmation(true, false);
   addItem(toyotaAutoUnlock);
@@ -195,7 +195,7 @@ SPVehiclesTogglesPanel::SPVehiclesTogglesPanel(VehiclePanel *parent) : ListWidge
   auto volkswagenCCOnly = new ParamControlSP(
     "VwCCOnly",
     tr("Enable CC Only support"),
-    tr("sunnypilot supports Volkswagen MQB CC only platforms with this toggle enabled. Only enable this toggle if your car does not have ACC from the factory."),
+    tr("Gambitdriver supports Volkswagen MQB CC only platforms with this toggle enabled. Only enable this toggle if your car does not have ACC from the factory."),
     "../assets/offroad/icon_blank.png");
   volkswagenCCOnly->setConfirmation(true, false);
   addItem(volkswagenCCOnly);

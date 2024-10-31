@@ -38,23 +38,23 @@ TogglesPanelSP::TogglesPanelSP(SettingsWindow *parent) : TogglesPanel(parent) {
   std::vector<std::tuple<QString, QString, QString, QString>> toggle_defs{
     {
       "OpenpilotEnabledToggle",
-      tr("Enable sunnypilot"),
-      tr("Use the sunnypilot system for adaptive cruise control and lane keep driver assistance. Your attention is required at all times to use this feature. Changing this setting takes effect when the car is powered off."),
+      tr("Enable Gambitdriver"),
+      tr("Use the Gambitdriver system for adaptive cruise control and lane keep driver assistance. Your attention is required at all times to use this feature. Changing this setting takes effect when the car is powered off."),
       "../assets/offroad/icon_blank.png",
     },
     {
       "ExperimentalLongitudinalEnabled",
       tr("openpilot Longitudinal Control (Alpha)"),
       QString("<b>%1</b><br><br>%2")
-      .arg(tr("WARNING: sunnypilot longitudinal control is in alpha for this car and will disable Automatic Emergency Braking (AEB)."))
-      .arg(tr("On this car, sunnypilot defaults to the car's built-in ACC instead of openpilot's longitudinal control. "
-              "Enable this to switch to sunnypilot longitudinal control. Enabling Experimental mode is recommended when enabling sunnypilot longitudinal control alpha.")),
+      .arg(tr("WARNING: Gambitdriver longitudinal control is in alpha for this car and will disable Automatic Emergency Braking (AEB)."))
+      .arg(tr("On this car, Gambitdriver defaults to the car's built-in ACC instead of openpilot's longitudinal control. "
+              "Enable this to switch to Gambitdriver longitudinal control. Enabling Experimental mode is recommended when enabling Gambitdriver longitudinal control alpha.")),
       "../assets/offroad/icon_blank.png",
     },
     {
       "CustomStockLong",
       tr("Custom Stock Longitudinal Control"),
-      tr("When enabled, sunnypilot will attempt to control stock longitudinal control with ACC button presses.\nThis feature must be used along with SLC, and/or V-TSC, and/or M-TSC."),
+      tr("When enabled, Gambitdriver will attempt to control stock longitudinal control with ACC button presses.\nThis feature must be used along with SLC, and/or V-TSC, and/or M-TSC."),
       "../assets/offroad/icon_blank.png",
     },
     {
@@ -66,13 +66,13 @@ TogglesPanelSP::TogglesPanelSP(SettingsWindow *parent) : TogglesPanel(parent) {
     {
       "DynamicExperimentalControl",
       tr("Enable Dynamic Experimental Control"),
-      tr("Enable toggle to allow the model to determine when to use sunnypilot ACC or sunnypilot End to End Longitudinal."),
+      tr("Enable toggle to allow the model to determine when to use Gambitdriver ACC or Gambitdriver End to End Longitudinal."),
       "../assets/offroad/icon_blank.png",
     },
     {
       "DynamicPersonality",
       tr("Enable Dynamic Personality"),
-      tr("Enable this to allow sunnypilot to dynamically adjust following distance and reaction based on your \"Driving Personality\" setting. "
+      tr("Enable this to allow Gambitdriver to dynamically adjust following distance and reaction based on your \"Driving Personality\" setting. "
         "Instead of predefined settings for each personality, every personality now adapts dynamically according to your speed and the distance to the lead car."),
       "../assets/offroad/icon_blank.png",
     },
@@ -91,7 +91,7 @@ TogglesPanelSP::TogglesPanelSP(SettingsWindow *parent) : TogglesPanel(parent) {
     {
       "AlwaysOnDM",
       tr("Always-On Driver Monitoring"),
-      tr("Enable driver monitoring even when sunnypilot is not engaged."),
+      tr("Enable driver monitoring even when Gambitdriver is not engaged."),
       "../assets/offroad/icon_blank.png",
     },
     {
@@ -132,8 +132,8 @@ TogglesPanelSP::TogglesPanelSP(SettingsWindow *parent) : TogglesPanel(parent) {
 
   std::vector<QString> longi_button_texts{tr("Aggressive"), tr("Moderate"), tr("Standard"), tr("Relaxed")};
   long_personality_setting = new ButtonParamControlSP("LongitudinalPersonality", tr("Driving Personality"),
-                                          tr("Standard is recommended. In moderate/aggressive mode, sunnypilot will follow lead cars closer and be more aggressive with the gas and brake. "
-                                             "In relaxed mode sunnypilot will stay further away from lead cars. On supported cars, you can cycle through these personalities with "
+                                          tr("Standard is recommended. In moderate/aggressive mode, Gambitdriver will follow lead cars closer and be more aggressive with the gas and brake. "
+                                             "In relaxed mode Gambitdriver will stay further away from lead cars. On supported cars, you can cycle through these personalities with "
                                              "your steering wheel distance button."),
                                           "",
                                           longi_button_texts,
@@ -143,8 +143,8 @@ TogglesPanelSP::TogglesPanelSP(SettingsWindow *parent) : TogglesPanel(parent) {
   // accel controller
   std::vector<QString> accel_personality_texts{tr("Sport"), tr("Normal"), tr("Eco"), tr("Stock")};
   accel_personality_setting = new ButtonParamControlSP("AccelPersonality", tr("Acceleration Personality"),
-                                          tr("Normal is recommended. In sport mode, sunnypilot will provide aggressive acceleration for a dynamic driving experience. "
-                                             "In eco mode, sunnypilot will apply smoother and more relaxed acceleration. On supported cars, you can cycle through these "
+                                          tr("Normal is recommended. In sport mode, Gambitdriver will provide aggressive acceleration for a dynamic driving experience. "
+                                             "In eco mode, Gambitdriver will apply smoother and more relaxed acceleration. On supported cars, you can cycle through these "
                                              "acceleration personality within Onroad Settings on the driving screen."),
                                           "",
                                           accel_personality_texts);
@@ -230,7 +230,7 @@ void TogglesPanelSP::updateToggles() {
                                           "%5<br>")
                                   .arg(tr("openpilot defaults to driving in <b>chill mode</b>. Experimental mode enables <b>alpha-level features</b> that aren't ready for chill mode. Experimental features are listed below:"))
                                   .arg(tr("End-to-End Longitudinal Control"))
-                                  .arg(tr("Let the driving model control the gas and brakes. sunnypilot will drive as it thinks a human would, including stopping for red lights and stop signs. "
+                                  .arg(tr("Let the driving model control the gas and brakes. Gambitdriver will drive as it thinks a human would, including stopping for red lights and stop signs. "
                                           "Since the driving model decides the speed to drive, the set speed will only act as an upper bound. This is an alpha quality feature; "
                                           "mistakes should be expected."))
                                   .arg(tr("New Driving Visualization"))
@@ -284,9 +284,9 @@ void TogglesPanelSP::updateToggles() {
                           tr("openpilot longitudinal control may come in a future update.");
       if (CP.getExperimentalLongitudinalAvailable()) {
         if (is_release) {
-          long_desc = unavailable + " " + tr("An alpha version of sunnypilot longitudinal control can be tested, along with Experimental mode, on non-release branches.");
+          long_desc = unavailable + " " + tr("An alpha version of Gambitdriver longitudinal control can be tested, along with Experimental mode, on non-release branches.");
         } else {
-          long_desc = tr("Enable the sunnypilot longitudinal control (alpha) toggle to allow Experimental mode.");
+          long_desc = tr("Enable the Gambitdriver longitudinal control (alpha) toggle to allow Experimental mode.");
         }
       }
       experimental_mode_toggle->setDescription("<b>" + long_desc + "</b><br><br>" + e2e_description);
@@ -359,10 +359,10 @@ SettingsWindowSP::SettingsWindowSP(QWidget *parent) : SettingsWindow(parent) {
   QList<PanelInfo> panels = {
     PanelInfo("   " + tr("Device"), device, "../assets/navigation/icon_home.svg"),
     PanelInfo("   " + tr("Network"), new NetworkingSP(this), "../assets/offroad/icon_network.png"),
-    PanelInfo("   " + tr("sunnylink"), new SunnylinkPanel(this), "../assets/offroad/icon_wifi_strength_full.svg"),
+    PanelInfo("   " + tr("Springer Portal"), new SunnylinkPanel(this), "../assets/offroad/icon_wifi_strength_full.svg"),
     PanelInfo("   " + tr("Toggles"), toggles, "../assets/offroad/icon_toggle.png"),
     PanelInfo("   " + tr("Software"), new SoftwarePanelSP(this), "../assets/offroad/icon_software.png"),
-    PanelInfo("   " + tr("sunnypilot"), new SunnypilotPanel(this), "../assets/offroad/icon_openpilot.png"),
+    PanelInfo("   " + tr("Gambitdriver"), new SunnypilotPanel(this), "../assets/offroad/icon_openpilot.png"),
     PanelInfo("   " + tr("OSM"), new OsmPanel(this), "../assets/offroad/icon_map.png"),
     PanelInfo("   " + tr("Monitoring"), new MonitoringPanel(this), "../assets/offroad/icon_monitoring.png"),
     PanelInfo("   " + tr("Visuals"), new VisualsPanel(this), "../assets/offroad/icon_visuals.png"),
